@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.ibrahim.a2zshop.fragments.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.login.LoginFragment">
+
+        <ImageView
+            android:id="@+id/imgTopBackground_login"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@+id/txtYourEmail_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/top_background"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txtLoginTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/login_to_your_account"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgTopBackground_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imgWoman_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgTopBackground_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtLoginTo"
+            app:srcCompat="@drawable/women2"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txtYourEmail_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/your_email"
+            android:textColor="@color/primary_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtYourEmail_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgTopBackground_login" />
+
+        <EditText
+            android:id="@+id/edtYourEmail_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/background_edittext"
+            android:drawableStart="@drawable/ic_email_toggle"
+            android:drawablePadding="5dp"
+            android:hint="@string/enter_your_email"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:text="@={loginViewModel.email}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtYourEmail_login"
+            app:layout_constraintTop_toBottomOf="@+id/txtYourEmail_login" />
+
+        <TextView
+            android:id="@+id/txtYourPassword_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/your_password"
+            android:textColor="@color/primary_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtYourEmail_login"
+            app:layout_constraintTop_toBottomOf="@+id/edtYourEmail_login" />
+
+        <EditText
+            android:id="@+id/edtYourPassword_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background_edittext"
+            android:drawableStart="@drawable/ic_password_toggle"
+            android:drawablePadding="5dp"
+            android:hint="@string/enter_your_password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:text="@={loginViewModel.password}"
+            app:layout_constraintEnd_toEndOf="@+id/edtYourEmail_login"
+            app:layout_constraintStart_toStartOf="@+id/txtYourEmail_login"
+            app:layout_constraintTop_toBottomOf="@+id/txtYourPassword_login" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/forgetPassword_login"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="@string/forget_password"-->
+        <!--            android:textColor="@color/blue"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/edtYourEmail_login"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/edtYourPassword_login"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/btnLogin_Login"/>-->
+
+        <Button
+            android:id="@+id/btnLogin_Login"
+            style="@style/button_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/background_button"
+            android:text="@string/login"
+            android:onClick="@{() -> loginViewModel.login()}"
+            app:layout_constraintEnd_toEndOf="@id/edtYourEmail_login"
+            app:layout_constraintStart_toStartOf="@id/txtYourEmail_login"
+            app:layout_constraintTop_toBottomOf="@+id/edtYourPassword_login" />
+
+        <Button
+            android:id="@+id/btnRegister_Login"
+            style="@style/button_style2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button"
+            android:text="@string/don_t_have_an_account_register"
+            android:layout_marginVertical="20dp"
+            android:onClick="@{()->loginViewModel.navigateToRegister()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btnLogin_Login"
+            app:layout_constraintStart_toStartOf="@id/btnLogin_Login"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin_Login" />
+
+        <ProgressBar
+            android:id="@+id/loading_wheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,44 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable-v24/ic_phone_toggle.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/background_bottom_nav.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/background_button.xml" value="0.2075" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/background_edittext.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/button_background.xml" value="0.135" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/button_background_2.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_email_focused.xml" value="0.135" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_email_toggle.xml" value="0.114" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_email_unfocused.xml" value="0.135" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_favorite_border.xml" value="0.2075" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_home.xml" value="0.2075" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_password_focused.xml" value="0.135" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_password_toggle.xml" value="0.1" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_password_unfocused.xml" value="0.135" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_person_focused.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_person_toggle.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_person_unfocused.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_phone_focused.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/ic_phone_unfocused.xml" value="0.156" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/drawable/shape_edittext.xml" value="0.135" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/fragment_categories.xml" value="0.1859375" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/fragment_register.xml" value="0.2" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/item_home.xml" value="0.2" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/layout/item_slider.xml" value="0.19895833333333332" />
+        <entry key="..\:/Android_Apps/A2ZShop/app/src/main/res/menu/bottom_navigation.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

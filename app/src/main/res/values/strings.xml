@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">A2Z Shop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="background_intro" translatable="false">Background intro</string>
+    <string name="welcome_back_to_your_app" translatable="true">Welcome back to your app</string>
+    <string name="logo_image" translatable="false">logoImage</string>
+    <string name="login" translatable="true">login</string>
+    <string name="register" translatable="true">register</string>
+    <string name="your_email" translatable="true">Your email</string>
+    <string name="enter_your_email" translatable="true">Enter your email</string>
+    <string name="forget_password" translatable="true">Forget password?</string>
+    <string name="don_t_have_an_account_register" translatable="true">don\'t have an account?Register</string>
+    <string name="enter_your_password" translatable="true">Enter your password</string>
+    <string name="your_password" translatable="true">your password</string>
+    <string name="create_account" translatable="true">Create\naccount</string>
+    <string name="your_name" translatable="true">your name</string>
+    <string name="enter_your_name" translatable="true">Enter your name</string>
+    <string name="your_phone" translatable="true">your phone</string>
+    <string name="edit_your_phone" translatable="true">Enter your phone</string>
+    <string name="already_have_an_account" translatable="true">Already have an account?</string>
+    <string name="home" translatable="true">Home</string>
+    <string name="categories" translatable="true">Categories</string>
+    <string name="my_account" translatable="true">My Account</string>
+    <string name="cart" translatable="true">Cart</string>
+    <string name="a2z" translatable="false">A2Z</string>
+    <string name="what_are_you_looking_for">What are you looking for?</string>
+    <string name="cancel" translatable="true">Cancel</string>
+    <string name="add_to_cart" translatable="true">Add to Cart</string>
+    <string name="remove_from_cart" translatable="true">Remove from Cart</string>
+    <string name="qty">QTY</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="edit">Edit</string>
+    <string name="language" translatable="true">Language</string>
+    <string name="ar">ar</string>
+    <string name="en">en</string>
+    <string name="mode" translatable="true">Mode</string>
+    <string name="light" translatable="true">Light</string>
+    <string name="dark" translatable="true">Dark</string>
+    <string name="remember_me" translatable="false">Remember me</string>
+    <string name="logout" translatable="true">Logout</string>
+    <string name="login_to_your_account">Login to\nyour Account</string>
+    <string name="favorite" translatable="true">favorite</string>
+    <string name="change_password">Change password</string>
+    <string name="current_password">Current password</string>
+    <string name="your_current_password">Your current password</string>
+    <string name="your_new_password">Your new password</string>
+    <string name="new_password">New Password</string>
+    <string name="reset_password">Reset password</string>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Arabic</item>
+    </string-array>
+    <string-array name="modes">
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+</resources>

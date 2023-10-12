@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="productModel"
+            type="com.example.domain.models.ProductModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddToCart"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                tools:context=".fragments.product_details.ProductDetailsFragment">
+
+                <TextView
+                    android:id="@+id/txtName_Product_Details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{productModel.name}"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="ابل ايفون 12 برو ماكس - 256جيجابيت, ازرق" />
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/sliderProductDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName_Product_Details"
+                    app:sliderAnimationDuration="600"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="5dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="@color/primary_color"
+                    app:sliderIndicatorUnselectedColor="@color/secondary_color"
+                    app:sliderScrollTimeInSec="2" />
+
+                <ImageButton
+                    android:id="@+id/imgButton_product_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/background_image_button"
+                    android:backgroundTint="@color/off_white"
+                    android:padding="5dp"
+                    app:bindButtonFavorite="@{productModel.in_favorites}"
+                    app:layout_constraintEnd_toEndOf="@id/sliderProductDetails"
+                    app:layout_constraintTop_toTopOf="@id/sliderProductDetails"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_favorite_border" />
+
+                <TextView
+                    android:id="@+id/txtOldPrice_product_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/strike_line"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp"
+                    app:discount="@{productModel.discount}"
+                    app:layout_constraintStart_toStartOf="@id/sliderProductDetails"
+                    app:layout_constraintTop_toBottomOf="@+id/sliderProductDetails"
+                    app:oldPrice="@{productModel.old_price}"
+                    tools:text="9000 EGP" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:bindOff="@{productModel.discount}"
+                    app:layout_constraintStart_toEndOf="@+id/txtOldPrice_product_details"
+                    app:layout_constraintTop_toTopOf="@id/txtOldPrice_product_details"
+                    tools:text=" 8% OFF" />
+
+                <TextView
+                    android:id="@+id/txtPrice_product_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:bindTextPrice="@{productModel.price}"
+                    app:layout_constraintStart_toStartOf="@id/txtOldPrice_product_details"
+                    app:layout_constraintTop_toBottomOf="@+id/txtOldPrice_product_details"
+                    tools:text="9000 EGP" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtPrice_product_details">
+
+                    <TextView
+                        android:id="@+id/txtDescription_Product_Details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{productModel.description}"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </ScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/btnAddToCart"
+            style="@style/button_style2"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_button"
+            app:bindButtonAddCart="@{productModel.in_cart}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nestedScroll" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

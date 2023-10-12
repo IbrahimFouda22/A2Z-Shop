@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="productModel"
+            type="com.example.domain.models.ProductModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="10dp"
+            app:strokeColor="@color/secondary_color"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_item_home"
+                    bindImage="@{productModel.image}"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription"
+                    tools:srcCompat="@drawable/women" />
+
+                <ImageButton
+                    android:id="@+id/imgButton_item_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/background_image_button"
+                    android:backgroundTint="@color/off_white"
+                    android:padding="5dp"
+                    app:bindButtonFavorite="@{productModel.in_favorites}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_favorite_border" />
+
+                <TextView
+                    android:id="@+id/txtName_item_home"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_margin="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@{productModel.name}"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_item_home"
+                    tools:text="تليفزيون سمارت 65 بوصة 4K الترا اتش دي منحني من سامسونج UA65RU7300RXUM" />
+
+                <TextView
+                    android:id="@+id/txtOldPrice_item_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/strike_line"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp"
+                    app:discount="@{productModel.discount}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName_item_home"
+                    app:oldPrice="@{productModel.old_price}"
+                    tools:text="9000 EGP" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:bindOff="@{productModel.discount}"
+                    app:layout_constraintStart_toEndOf="@+id/txtOldPrice_item_home"
+                    app:layout_constraintTop_toTopOf="@id/txtOldPrice_item_home"
+                    tools:text=" 8% OFF" />
+
+                <TextView
+                    android:id="@+id/txtPrice_item_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:bindTextPrice="@{productModel.price}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtOldPrice_item_home"
+                    app:layout_constraintTop_toBottomOf="@+id/txtOldPrice_item_home"
+                    tools:text="9000 EGP" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+</layout>

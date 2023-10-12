@@ -1,0 +1,68 @@
+package com.ibrahim.a2zshop.adapters
+
+import android.annotation.SuppressLint
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
+import com.example.domain.models.ProductModel
+import com.ibrahim.a2zshop.OnClickListener
+import com.ibrahim.a2zshop.R
+import com.ibrahim.a2zshop.databinding.ItemHomeBinding
+
+class SearchAdapter(
+    private var products: List<ProductModel>?,
+    private val onClickListener: OnClickListener
+) : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+    class ViewHolder(val itemHomeBinding: ItemHomeBinding) :
+        RecyclerView.ViewHolder(itemHomeBinding.root) {
+        fun bind(productModel: ProductModel) {
+            itemHomeBinding.productModel = productModel
+            itemHomeBinding.executePendingBindings()
+        }
+
+        fun iconFavoriteToggle(inFavorite: Boolean) {
+            if (inFavorite)
+                itemHomeBinding.imgButtonItemHome.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        itemHomeBinding.imgButtonItemHome.context,
+                        R.drawable.ic_favorite_border
+                    )
+                )
+            else
+                itemHomeBinding.imgButtonItemHome.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        itemHomeBinding.imgButtonItemHome.context,
+                        R.drawable.ic_favorite
+                    )
+                )
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(ItemHomeBinding.inflate(LayoutInflater.from(parent.context)))
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(products!![position])
+        }
+        holder.itemHomeBinding.imgButtonItemHome.setOnClickListener {
+            onClickListener.onClickButtonFavorite(products!![position].id)
+            holder.iconFavoriteToggle(products!![position].in_favorites)
+            products!![position].in_favorites = !products!![position].in_favorites
+            notifyItemChanged(position)
+        }
+        holder.bind(products!![position])
+    }
+
+    override fun getItemCount(): Int {
+        return products?.size ?: 0
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setProducts(products: List<ProductModel>) {
+        this.products = products
+        notifyDataSetChanged()
+    }
+}
